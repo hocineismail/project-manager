@@ -14,7 +14,8 @@ export class AppComponent  implements OnInit {
   constructor(private localStore: LocalService) {
 
   }
-  projects: IProject[] =  [] 
+  inputToDoText:string = '';
+  projects: IProject[] =  [] ; 
   ngOnInit(): void {
     //before fetching data we should check if we have stored before
     //Consumer
@@ -32,5 +33,19 @@ export class AppComponent  implements OnInit {
       this.projects =  JSON.parse(`${this.localStore.getData("project")}`)
     } 
   }
-
+  addProject () {
+    let newProjects: IProject = {
+      id: this.projects.length + 1,
+      name: this.inputToDoText,
+      tasks: []
+    }
+    this.inputToDoText = ''
+    this.projects =  [...this.projects, newProjects]
+  }
+  removeProject (id: number) { 
+    this.projects =   this.projects.filter((item) => item.id !== id)
+  }
+  addItem(newItem: string) {
+   console.log(newItem)
+  }
 }

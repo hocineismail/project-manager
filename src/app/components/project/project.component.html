@@ -1,9 +1,14 @@
- 
-    <ul *ngFor = "let project of projects">
-        <li>
-        {{project.name}} 
-       
-        <!-- <app-task  [tasks]="project.tasks"></app-task> -->
-       </li> 
+<div>
+    <div class="form-group">
+        <label for="project">Add new project</label>
+        <input type="email" class="form-control" id="project" aria-describedby="emailHelp" placeholder="project">
+   
+    </div>
+  <ul *ngFor="let project of projects" class="list-group">
+  <li class="list-group-item ">
+      {{ project.name }} 
+      <app-task [tasks]="project.tasks"></app-task>
+    </li>
   </ul>
- 
+   
+</div>

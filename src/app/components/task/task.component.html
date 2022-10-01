@@ -1,0 +1,14 @@
+<span>
+    <ul *ngFor="let task of tasks" class="list-group">
+  <li class="list-group-item">
+    parent:  {{id}} <br/>
+    {{ task.name }}
+    <app-task [tasks]="task.children" [id]="[id, task.id]"  (newItemEvent)="addItem($event)"></app-task>
+  </li>
+</ul>
+  <div class="form-group">
+        <label for="project">Add new task after  </label>
+        <input type="email" class="form-control" id="project" aria-describedby="emailHelp" placeholder="project"> 
+        <button (click)="addNewTask(12)">Add</button> 
+    </div> 
+</span>

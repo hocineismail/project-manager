@@ -18,38 +18,11 @@
               "children": [
                 {
                   "id": 3,
-                  "name": "Task 1.1",
-                  "description": "Task 1.1 description",
+                  "name": "Task 1.2",
+                  "description": "Task 1.2 description",
                   "status": "in-progress"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "name": "Task 2",
-          "description": "Task 2 description",
-          "status": "completed",
-          "children": []
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "name": "Project 2",
-      "tasks": [
-        {
-          "id": 1,
-          "name": "Task 1",
-          "status": "active",
-          "description": "Task 1 description",
-          "children": [
-            {
-              "id": 3,
-              "name": "Task 1.1",
-              "description": "Task 1.1 description",
-              "status": "in-progress"
             }
           ]
         },

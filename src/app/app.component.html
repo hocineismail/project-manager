@@ -1,4 +1,21 @@
-<div> 
-  asdasd
- <app-project [projects]="projects"></app-project>
+<div class="container"> 
+  
+ <div>
+    <div class="form-group">
+        <label for="project">Add new project</label>
+        <input  [(ngModel)]="inputToDoText" type="text" class="todo-input" name="inputToDo" placeholder="Enter project...">
+          <button (click)="addProject()">Add</button> 
+    </div>
+  <ul *ngFor="let project of projects" class="list-group">
+  <li class="list-group-item ">
+    <span (click)="removeProject(project.id)"><i class="bi bi-trash btn-remove" ></i></span>
+      {{ project.name }} 
+      <app-task 
+      [tasks]="project.tasks" 
+      [id]="[project.id]"
+      (newItemEvent)="addItem($event)"
+      ></app-task>
+    </li>
+  </ul> 
+</div>
 </div>
